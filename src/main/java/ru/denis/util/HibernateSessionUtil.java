@@ -6,7 +6,6 @@ import org.hibernate.cfg.Configuration;
 
 import ru.denis.model.User;
 
-
 import java.util.Properties;
 
 @Slf4j
@@ -28,11 +27,11 @@ public class HibernateSessionUtil {
 
     private static Properties getProperty() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/jm?serverTimezone=GMT");
-        properties.setProperty("dialect", "org.hibernate.dialect.MySQLDialect");
-        properties.setProperty("hibernate.connection.username", "root");
-        properties.setProperty("hibernate.connection.password", "root");
-        properties.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
+        properties.getProperty("hibernate.connection.url");
+        properties.getProperty("dialect");
+        properties.getProperty("hibernate.connection.username");
+        properties.getProperty("hibernate.connection.password");
+        properties.getProperty("hibernate.connection.driver_class");
         return properties;
     }
 }

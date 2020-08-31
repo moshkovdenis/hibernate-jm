@@ -76,9 +76,7 @@ public class UserDaoHibernateImpl implements UserDao {
     public List<User> getAllUsers() {
         List<User> allUsers = new LinkedList<>();
         try (Session session = HibernateSessionUtil.getSessionFactory().openSession()) {
-            Transaction transaction = session.beginTransaction();
             allUsers = (List<User>) session.createQuery(ALL).list();
-            transaction.commit();
             log.info("All users received: " + allUsers.toString());
         } catch (Exception e) {
             log.error("Failed to get all users. " + e);
